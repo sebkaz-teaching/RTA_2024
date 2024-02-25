@@ -6,18 +6,19 @@ title: "Informacje ogólne"
 
 Kod: 222890-S
 
-Semestr zimowy 2022/2023,
+Semestr letni 2024,
 SGH Szkoła Główna Handlowa w Warszawie
 
-Szczegółowy opis znajdziesz w [sylabusie](/RTA_2023/sylabus).
+Szczegółowy opis znajdziesz w [sylabusie](/RTA_2024/sylabus).
 Znajdziesz w nim opis wszystkich wykładów i ćwiczeń oraz proponowaną literaturę.
 
-Inne książki zamieszczone zostały w zakładce [książki](/RTA_2023/ksiazki)
+Inne książki zamieszczone zostały w zakładce [książki](/RTA_2024/ksiazki)
 
 ## Kalendarz
 
 #### Wykład
-1. <del>25-02-2023 (sobota) 08:00-09:30 - Wykład 1</del>
+
+1. 02-03-2024 (sobota) 08:00-09:30 - Wykład 1 - G Aula VI
 Tematy reazlizowane na wykładzie:
     - Dane ustrukturyzowane i nieustrukturyzowane
     - Procesy generowania danych
@@ -27,44 +28,36 @@ Tematy reazlizowane na wykładzie:
     - Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń, 
     - Narzędzie i aplikacje przetwarzania strumieniowego
 
-2. 11-03-2023 (sobota) 08:00-09:30 - Wykład 2
+2. 16-03-2024 (sobota) 08:00-09:30 - Wykład 2 - G Aula VI
+    - TEST Teoretyczny 10 pytań - 20 minut.
 
 
-#### ćwiczenia
+#### laboratorium
 
-1. <del>25-03-2022 (sobota) 08:00-15:00 - G116 4 grupy </del>
-1. <del>26-03-2022 (niedziela) 09:50-17.00 - G116 4 grupy</del>
+1. 06-04-2024 (sobota) 08:00-15:00 - G116 4 grupy 
+1. 07-04-2024 (niedziela) 09:50-17.00 - G116 4 grupy
 
-- uruchomienie środowiska 
-- dane ustrukturyzowane i nieustrukturyzowane
 
-2. <del>15-04-2022 (sobota) 08:00-15:00 - G116 4 grupy</del>
-2. <del>16-04-2022 (niedziela) 09:50-17.00 - G116 4 grupy</del>
+2. 20-04-2024 (sobota) 08:00-15:00 - G116 4 grupy
+2. 21-04-2024 (niedziela) 09:50-17.00 - G116 4 grupy
 
-- sieci neuronowe dla danych nieustrukturyzowanych
-- Flask API 
-- Programowanie obiektowe
 
-3. <del>06-05-2022 (sobota) 08:00-15:00 - G116 4 grupy</del>
-3. <del>07-05-2022 (niedziela) 09:50-17.00 - G116 4 grupy</del>
+3. 04-05-2024 (sobota) 08:00-15:00 - G116 4 grupy
+3. 05-05-2024 (niedziela) 09:50-17.00 - G116 4 grupy
+ 
 
-- Spark Streaming 
+4. 25-05-2024 (sobota) 08:00-15:00 - G116 4 grupy
+4. 26-05-2024 (niedziela) 09:50-17.00 - G116 4 grupy
 
-4. 20-05-2022 (sobota) 08:00-15:00 - G116 4 grupy
-4. 21-05-2022 (niedziela) 09:50-17.00 - G116 4 grupy
 
-- homework
-- Nagranie
+5. 08-06-2022 (sobota) 08:00-15:00 - G116 4 grupy
+5. 09-06-2022 (niedziela) 09:50-17.00 - G116 4 grupy
 
-5. 10-06-2022 (sobota) 08:00-15:00 - G116 4 grupy
-5. 11-06-2022 (niedziela) 09:50-17.00 - G116 4 grupy
-
-- Apache Kafka
 
 
 #### Miejsce
 
-Wykłady 1-2: G-Aula IV
+Wykłady 1-2: G-Aula VI
 Laboratorium 1-5: 116 G
 
 #### Zaliczenie i Egzamin
