@@ -20,31 +20,19 @@ Ciekawe książki i strony internetowe zamieszczone zostały w zakładce [ksią�
 Wykład jest realizowany w trybie stacjonarnym.
 Jest on NIEOBOWIĄZKOWY i odbywa się w Auli II bud G
 
-1. 26-02-2024 (poniedziałek) 09:50-11:30 - Wykład 1
+1. <del>26-02-2024 (poniedziałek) 09:50-11:30 - Wykład 1</del>
 Tematy zrealizowane na wykładzie:
     - Dane ustrukturyzowane i nieustrukturyzowane
     - Procesy generowania danych
     - Big Data
-    - Modele przetwarzania danych OLTP, OLAP
 
 2. 04-03-2024 (poniedziałek) 09:50-11:30 - Wykład 2
-Tematy zrealizowane na wykładzie:
-    - Przetwarzanie wsadowe vs Przetwarzanie strumieni danych
-    - ETL 
-    - Wzorzec MapReduce
-    - Biznesowe wymagania dla strumieni danych
-    - Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń, 
-    - Narzędzie i aplikacje przetwarzania strumieniowego
+Tematy zrealizowane:
+    - Modele przetwarzania danych OLTP, OLAP
 
 3. 11-03-2024 (poniedziałek) 09:50-11:30 - Wykład 3
-Tematy reazlizowane na wykładzie: 
-    - Czas w przetwarzaniu danych strumieniowych  
-    - Działanie systemu klient-serwer: REST API
+
 4. 18-03-2024 (poniedziałek) 09:50-11:30 - Wykład 4
-Tematy realizowane na wykładzie:
-    - TEST 20 pytań!
-    - Działanie systemu pub-sub: Apache Kafka
-    - Architektura Lammbda i Kappa
 
 5. 25-03-2024 (poniedziałek) 09:50-11:30 - Wykład 5
 Tematy realizowane na wykładzie:
