@@ -18,7 +18,7 @@ Inne książki zamieszczone zostały w zakładce [książki](/RTA_2024/ksiazki)
 
 #### Wykład
 
-1. 02-03-2024 (sobota) 08:00-09:30 - Wykład 1 - G Aula VI
+1. <del>02-03-2024 (sobota) 08:00-09:30 - Wykład 1 - G Aula VI</del>
 Tematy reazlizowane na wykładzie:
     - Dane ustrukturyzowane i nieustrukturyzowane
     - Procesy generowania danych

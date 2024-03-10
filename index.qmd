@@ -22,13 +22,18 @@ Jest on NIEOBOWIĄZKOWY i odbywa się w Auli II bud G
 
 1. <del>26-02-2024 (poniedziałek) 09:50-11:30 - Wykład 1</del>
 Tematy zrealizowane na wykładzie:
-    - Dane ustrukturyzowane i nieustrukturyzowane
-    - Procesy generowania danych
-    - Big Data
 
-2. 04-03-2024 (poniedziałek) 09:50-11:30 - Wykład 2
+- Dane ustrukturyzowane i nieustrukturyzowane
+- Procesy generowania danych
+- Big Data
+
+2. <del>04-03-2024 (poniedziałek) 09:50-11:30 - Wykład 2</del>
 Tematy zrealizowane:
-    - Modele przetwarzania danych OLTP, OLAP
+
+- Modele przetwarzania danych OLTP, OLAP
+- Szybkość podejmowania decyzji
+- Definicje eventów, strumieni danych
+- czas w strumieniach danych 
 
 3. 11-03-2024 (poniedziałek) 09:50-11:30 - Wykład 3
 
