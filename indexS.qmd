@@ -25,11 +25,13 @@ Tematy reazlizowane na wykładzie:
     - Big Data
     - Modele przetwarzania danych OLTP, OLAP
     - Biznesowe wymagania dla strumieni danych
-    - Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń, 
-    - Narzędzie i aplikacje przetwarzania strumieniowego
+   
 
 2. 16-03-2024 (sobota) 08:00-09:30 - Wykład 2 - G Aula VI
-    - TEST Teoretyczny 10 pytań - 20 minut.
+Tematy: 
+    - Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń, 
+    - Narzędzie i aplikacje przetwarzania strumieniowego
+    - API klient-serwer, Pub-Sub i Apache Kafka
 
 
 #### laboratorium

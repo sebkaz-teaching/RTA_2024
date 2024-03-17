@@ -35,14 +35,15 @@ Tematy zrealizowane:
 - Definicje eventów, strumieni danych
 - czas w strumieniach danych 
 
-3. 11-03-2024 (poniedziałek) 09:50-11:30 - Wykład 3
+3. <del>11-03-2024 (poniedziałek) 09:50-11:30 - Wykład 3</del>
+Tematy zrealizowane:
 
 4. 18-03-2024 (poniedziałek) 09:50-11:30 - Wykład 4
 
 5. 25-03-2024 (poniedziałek) 09:50-11:30 - Wykład 5
-Tematy realizowane na wykładzie:
-    - TEST 20 pytań! - 30 minut.
-    - Przygotowanie środowiska pracy
+
+- TEST 20 pytań! - 30 minut.
+- Przygotowanie środowiska pracy
     
 Test przeprowadzany jest za pośrednictwem MS Teams.
 
