@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -140,7 +174,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link active" data-scroll-target="#źródła-danych">Źródła danych</a>
+  <li><a href="#dane" id="toc-dane" class="nav-link active" data-scroll-target="#dane">Dane</a>
+  <ul class="collapse">
+  <li><a href="#dane-ustrukturyzowane" id="toc-dane-ustrukturyzowane" class="nav-link" data-scroll-target="#dane-ustrukturyzowane">Dane ustrukturyzowane</a></li>
+  <li><a href="#dane-w-języku-python" id="toc-dane-w-języku-python" class="nav-link" data-scroll-target="#dane-w-języku-python">Dane w języku Python</a></li>
+  </ul></li>
+  <li><a href="#źródła-danych" id="toc-źródła-danych" class="nav-link" data-scroll-target="#źródła-danych">Źródła danych</a>
   <ul class="collapse">
   <li><a href="#rzeczywisty-proces-generowania-danych" id="toc-rzeczywisty-proces-generowania-danych" class="nav-link" data-scroll-target="#rzeczywisty-proces-generowania-danych">Rzeczywisty proces generowania danych</a></li>
   </ul></li>
@@ -179,13 +218,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="dane" class="level2">
+<h2 class="anchored" data-anchor-id="dane">Dane</h2>
 <p>Rozwój technologii informatycznych spowodował dostęp do niewyobrażalnych ilości nowego zasobu jakim są <strong>ustrukturyzowane</strong> jak i <strong>nieustrukturyzowane</strong> dane.</p>
-<p><img src="img/main.jpeg" class="center img-fluid"></p>
-<p>Dane przyczyniły się do powstania tysięcy nowych narzędzi do <code>generowania</code>, <code>zbierania</code>, <code>przechowywania</code> i <code>przetwarzania</code> informacji na niespotykaną dotąd skalę.</p>
+<p><code>Dane</code> przyczyniły się do powstania tysięcy nowych narzędzi do <code>generowania</code>, <code>zbierania</code>, <code>przechowywania</code> i <code>przetwarzania</code> informacji na niespotykaną dotąd skalę.</p>
 <p>Zasób ten nie jest nowością i dostępny jest od bardzo dawna. Jednak dopiero po wprowadzeniu systemu pisma można było zacząć prowadzić zapis i przetwarzanie w postaci rachunkowości czy rejestrów różnych rzeczy takich jak: zaludnienie w krajach, spisy rzek, jezior, najgłębsze miejsca itp.</p>
-<p>Pojawienie się nowych wyzwań naukowych czy biznesowych staje się możliwe do realizacji dzięki budowie systemów opartych na <code>otwartym oprogramowaniu</code>, jak również dzięki wykorzystaniu domowych komputerów do wspomagania przetwarzania ogromnych ilości danych.</p>
-<p>Dziś systemy takie jak <a href="https://www.sas.com/pl_pl/home.html">SAS</a>, <a href="https://hadoop.apache.org">Apache Hadoop</a>, <a href="https://spark.apache.org">Apache Spark</a>, <a href="https://flink.apache.org">Apache Flink</a> dzięki rozwiązaniom chmurowym używane są na szeroką skalę w wielu instytucjach i firmach niemal w każdej dziedzinie. Narzędzia te wykorzystywane są w bankowości, opiece zdrowotnej, naukach przyrodniczych, produkcji, sektorze publicznym czy sprzedaży.</p>
-<p>Epoka danych stawia przed nami coraz to nowsze wyzwania związane nie tylko z ilością, ale i z czasem przetwarzania danych.</p>
+<p>Pojawienie się nowych wyzwań <em>naukowych</em> i <em>biznesowych</em> staje się możliwe do realizacji dzięki budowie systemów opartych na <code>otwartym oprogramowaniu</code>, jak również dzięki wykorzystaniu klastrów komputerów do wspomagania przetwarzania ogromnych ilości danych.</p>
+<p>Dziś systemy takie jak <a href="https://www.sas.com/pl_pl/home.html">SAS</a>, <a href="https://hadoop.apache.org">Apache Hadoop</a>,<a href="#">Apache Kafka</a> , <a href="https://spark.apache.org">Apache Spark</a>, <a href="https://flink.apache.org">Apache Flink</a> i ich chmurowe odpowiedniki, używane są na szeroką skalę w wielu instytucjach i firmach niemal w każdej dziedzinie. Narzędzia te wykorzystywane są w bankowości, opiece zdrowotnej, naukach przyrodniczych, produkcji, sektorze publicznym czy sprzedaży.</p>
+<p>Epoka danych stawia przed nami coraz to nowsze wyzwania związane nie tylko z <code>ilością</code>, ale i z <code>czasem przetwarzania</code> danych.</p>
 <p>Nowe wyzwania biznesowe to między innymi:</p>
 <ul>
 <li>inteligentna reklama tysięcy produktów dla milionów klientów,</li>
@@ -194,8 +234,118 @@ ul.task-list li input[type="checkbox"] {
 <li>symulacje giełdowe oparte o tysiące instrumentów finansowych</li>
 <li>…</li>
 </ul>
-<p>Wszystkie algorytmy uczenia maszynowego wymagają <strong>danych ustrukturyzowanych</strong> zapisanych w tabelarycznej postaci (tensory).<br>
-Zorganizowane są one w kolumnach cech charakteryzujących każdą obserwację (wiersze). Przykładem mogą być takie cechy jak: <strong>płeć</strong>, <strong>wzrost</strong> czy <strong>ilość posiadanych samochodów</strong>, na podstawie których można przewidywać czy klient będzie spłacał kredyt czy też nie. Takie przewidywanie również oznaczane jest jako cecha. Zmienne te dobierane są tak, by łatwo można je było pozyskać. Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy tj. <code>XGBoost</code> lub <code>regresji logistycznej</code> w celu wyznaczenia odpowiedniej kombinacji zmiennych wpływających na prawdopodobieństwo dobrego albo i złego klienta.</p>
+<section id="dane-ustrukturyzowane" class="level3">
+<h3 class="anchored" data-anchor-id="dane-ustrukturyzowane">Dane ustrukturyzowane</h3>
+<p>Dane ustrukturyzowane zorganizowane są w kolumnach cech charakteryzujących każdą obserwację (wiersze). Kolumny posiadają etykietę, która wskazuje na ich interpretację.</p>
+<p>Przykładem kolumn mogą być takie cechy jak: <strong>płeć</strong>, <strong>wzrost</strong> czy <strong>ilość kedytów</strong>, na podstawie których można przewidywać czy klient będzie spłacał kredyt czy też nie.</p>
+<div id="tab_data" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dane_klientow <span class="op">=</span> {<span class="st">"sex"</span>:[<span class="st">"m"</span>,<span class="st">"f"</span>,<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"f"</span>],</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="st">"height"</span>:[<span class="dv">160</span>, <span class="dv">172</span>, <span class="dv">158</span>, <span class="dv">174</span>, <span class="dv">192</span>],</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="st">"credits"</span>:[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> }</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(dane_klientow)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sex  height  credits
+0   m     160        0
+1   f     172        0
+2   m     158        1
+3   m     174        3
+4   f     192        1</code></pre>
+</div>
+</div>
+<p>Takie przewidywanie również oznaczane jest jako cecha (<em>ang. target</em>).</p>
+<div id="tab_data_target" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'target'</span>] <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sex  height  credits  target
+0   m     160        0       0
+1   f     172        0       1
+2   m     158        1       1
+3   m     174        3       0
+4   f     192        1       0</code></pre>
+</div>
+</div>
+</section>
+<section id="dane-w-języku-python" class="level3">
+<h3 class="anchored" data-anchor-id="dane-w-języku-python">Dane w języku Python</h3>
+<p>W wielu językach programowania domyślnym <code>pojemnikiem</code> na przechowywanie wartości są zmienne.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wiek <span class="op">=</span> <span class="dv">47</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>stan_cywilny <span class="op">=</span> <span class="st">'kawaler'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nie są one jednak praktyczną formą do przechowywania i manipulowania danymi.</p>
+<p>Jednym z rozwiązań jest przechowywanie wszystkich cech (np. klienta) w jednym obiekcie.</p>
+<p>W Pythonie zadanie to moze realizować obiekt <code>listy</code>, który pozwala przechowywać rózne typy danych w jednym obiekcie.</p>
+<div id="lista" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>klient <span class="op">=</span> [<span class="dv">38</span>, <span class="st">'kawaler'</span>, <span class="dv">1</span>, <span class="fl">56.3</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"dane klienta </span><span class="sc">{</span>klient<span class="sc">}</span><span class="ss"> w obiekcie: </span><span class="sc">{</span><span class="bu">type</span>(klient)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>dane klienta [38, 'kawaler', 1, 56.3] w obiekcie: &lt;class 'list'&gt;</code></pre>
+</div>
+</div>
+<p>Z punktu widzenia przerwarzania i modelowania mozliwość ta wprowadza więcej problemów niz korzyści. Sprawdźmy domyślne operacje:</p>
+<div id="lista_add" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"a+b=</span><span class="sc">{</span>a<span class="op">+</span>b<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>a=[1, 2, 3], b=[4, 5, 6]
+a+b=[1, 2, 3, 4, 5, 6]</code></pre>
+</div>
+</div>
+<p>natomiast:</p>
+<div id="lista_mul" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"a*b"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"a*b= </span><span class="sc">{</span>a<span class="op">*</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span>:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"operacja niezdefiniowana"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>a=[1, 2, 3], b=[4, 5, 6]
+a*b
+operacja niezdefiniowana</code></pre>
+</div>
+</div>
+<p>Biblioteka Numpy:</p>
+<div id="69abdfb3" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>aa <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>bb <span class="op">=</span> np.array([<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>])</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(aa))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'numpy.ndarray'&gt;</code></pre>
+</div>
+</div>
+<div id="b94ae3e4" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"aa=</span><span class="sc">{</span>aa<span class="sc">}</span><span class="ss">, bb=</span><span class="sc">{</span>bb<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"aa+bb=</span><span class="sc">{</span>aa<span class="op">+</span>bb<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"aa*bb=</span><span class="sc">{</span>aa<span class="op">*</span>bb<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>aa=[1 2 3], bb=[4 5 6]
+aa+bb=[5 7 9]
+aa*bb=[ 4 10 18]</code></pre>
+</div>
+</div>
+<p>Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy tj. <code>XGBoost</code> lub <code>regresji logistycznej</code> w celu wyznaczenia odpowiedniej kombinacji zmiennych wpływających na prawdopodobieństwo dobrego albo i złego klienta.</p>
 <p>Podstawowe systemy bazodanowe związane z językiem SQL również realizują modele danych, w których dane ładnowane są do (ustrukturyzowanych) tabel.</p>
 <p><strong>Dane nieustrukturyzowane</strong> to takie, które nie są ułożone wtabelarycznej postaci.</p>
 <blockquote class="blockquote">
@@ -205,6 +355,8 @@ Zorganizowane są one w kolumnach cech charakteryzujących każdą obserwację (
 <blockquote class="blockquote">
 <p>Zna typy danych ustrukturyzowanych jak i nieustrukturyzowanych (K2A_W02, K2A_W04, O2_W04, O2_W07)</p>
 </blockquote>
+</section>
+</section>
 <section id="źródła-danych" class="level2">
 <h2 class="anchored" data-anchor-id="źródła-danych">Źródła danych</h2>
 <p>Do trzech największych “generatorów” danych należą:</p>
@@ -213,6 +365,9 @@ Zorganizowane są one w kolumnach cech charakteryzujących każdą obserwację (
 <li><code>IoT</code>: dane pochodzące z czujników, czy też logi działania urządzeń i użytkowników (np. na stronie www).</li>
 <li><code>dane transakcyjne</code>: czyli ogólnie to co w każdej chwili generowane jest jako transakcje pojawiające się zarówno w trybie online jak i w trybie offline.</li>
 </ul>
+<section id="pythonowe-źródła-danych" class="level4">
+<h4 class="anchored" data-anchor-id="pythonowe-źródła-danych">Pythonowe źródła danych</h4>
+</section>
 <section id="rzeczywisty-proces-generowania-danych" class="level3">
 <h3 class="anchored" data-anchor-id="rzeczywisty-proces-generowania-danych">Rzeczywisty proces generowania danych</h3>
 <p>Dane generowane są w postaci <code>nieograniczonej</code> - pojawiają się na skutek ciągłych działań systemów. W swoim telefonie wygenerowałeś dziś (a nawet na tych zajęciach!) wiele danych. Czy na następnych zajęciach lub tez jutro nie będziesz ich generował?</p>
