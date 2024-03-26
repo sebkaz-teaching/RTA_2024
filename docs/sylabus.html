@@ -144,7 +144,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#program-przedmiotu" id="toc-program-przedmiotu" class="nav-link" data-scroll-target="#program-przedmiotu">Program przedmiotu</a></li>
   <li><a href="#efekty-kształcenia" id="toc-efekty-kształcenia" class="nav-link" data-scroll-target="#efekty-kształcenia">Efekty kształcenia</a></li>
   <li><a href="#realizacja-przedmiotu" id="toc-realizacja-przedmiotu" class="nav-link" data-scroll-target="#realizacja-przedmiotu">Realizacja przedmiotu</a></li>
-  <li><a href="#literatura" id="toc-literatura" class="nav-link" data-scroll-target="#literatura">Literatura</a></li>
   <li><a href="#literatura-uzupełniająca" id="toc-literatura-uzupełniająca" class="nav-link" data-scroll-target="#literatura-uzupełniająca">Literatura uzupełniająca</a></li>
   </ul>
 </nav>
@@ -183,26 +182,21 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Website:</strong> <a href="https://sebkaz-teaching.github.io/RTA_2023/">https://sebkaz-teaching.github.io/RTA_2023/</a></p>
 <section id="cel-przedmiotu" class="level2">
 <h2 class="anchored" data-anchor-id="cel-przedmiotu">Cel Przedmiotu</h2>
-<p>Podejmowanie prawidłowych decyzji na podstawie danych i ich analiz w biznesie to proces i codzienność. Nowoczesne metody modelowania przez uczenie maszynowe (ang. machine learning), sztuczną inteligencję (AI), bądź głębokie sieci neuronowe (ang. deep learning) pozwalają nie tylko na lepsze rozumienie biznesu, ale i wspomagają podejmowanie kluczowych dla niego decyzji. Rozwój technologii oraz coraz to nowsze koncepcje biznesowe pracy bezpośrednio z klientem wymagają nie tylko prawidłowych, ale i odpowiednio szybkich decyzji. Oferowane zajęcia mają na celu przekazanie studentom doświadczenia oraz kompleksowej wiedzy teoretycznej w zakresie przetwarzania i analizy danych w czasie rzeczywistym oraz zaprezentowanie najnowszych technologii informatycznych (darmowych oraz komercyjnych) służących do przetwarzania danych ustrukturyzowanych (pochodzących np. z hurtowni danych) jak i nieustrukturyzowanych (np. obrazy, dźwięk, strumieniowanie video) w trybie on-line. W toku zajęć przedstawiona zatem zostanie filozofia analizy dużych danych w czasie rzeczywistym jako część koncepcji Big Data w połączeniu ze strumieniowaniem danych, programowaniem strumieniowym w języku Python, R oraz SAS. Zostanie przedstawiona tzw. struktury lambda oraz kappa służące do przetwarzania danych w data lake wraz z omówieniem problemów i trudności jakie spotyka się w realizacji modelowania w czasie rzeczywistym dla dużej ilości danych. Wiedza teoretyczna zdobywana będzie (oprócz części wykładowej) poprzez realizację przypadków testowych w narzędziach takich jak Apache Spark, Nifi, Microsoft Azure, czy SAS. Na zajęciach laboratoryjnych studenci korzystać będą z pełni skonfigurowanych środowisk programistycznych przygotowanych do przetwarzania, modelowania i analizy danych. Tak aby oprócz umiejętności i znajomości technik analitycznych studenci poznali i zrozumieli najnowsze technologie informatyczne związane z przetwarzaniem danych w czasie rzeczywistym.</p>
+<p>Podejmowanie prawidłowych decyzji opartych na danych i ich analizie jest niezwykle istotne w dzisiejszym i nowoczesnym biznesie. Wprowadzenie nowoczesnych metod takich jak uczenie maszynowe, sztuczna inteligencja i głębokie sieci neuronowe, może znacznie poprawić zarówno zrozumienie biznesu, jak i jakość podejmowanych decyzji. Ponadto, szybkośc podejmowania decyzji jest kluczowym czynnikiem w dynamicznym środowisku biznesowym, zwłaszcza tam, gdzie pracuje się bezpośrednio z klientem. Zajęcia mają na celu przekazanie studentom doświadczenia oraz kompleksowej wiedzy teoretycznej w zakresie przetwarzania i analizy danych w czasie rzeczywistym oraz zaprezentowanie najnowszych technologii informatycznych służących do przetwarzania danych ustrukturyzowanych (pochodzących np. z hurtowni danych) jak i nieustrukturyzowanych (np. obrazy, dźwięk, strumieniowanie video) w trybie on-line. W toku zajęć przedstawiona zostanie filozofia analizy dużych danych w czasie rzeczywistym jz wykorzystaniem programowania w języku Python. Przedstawione zostaną struktury oprogramowania służące do przetwarzania danych wraz z omówieniem problemów i trudności jakie spotyka się w realizacji modelowania w czasie rzeczywistym dla dużej ilości danych. Wiedza teoretyczna zdobywana będzie (oprócz części wykładowej) poprzez realizację przypadków testowych w narzędziach takich jak Apache Spark czy Apache Kafka. Na zajęciach laboratoryjnych studenci korzystać będą z pełni skonfigurowanych środowisk programistycznych przygotowanych do przetwarzania, modelowania i analizy danych. Tak, aby oprócz umiejętności i znajomości technik analitycznych studenci poznali i zrozumieli najnowsze technologie informatyczne związane z przetwarzaniem danych w czasie rzeczywistym.</p>
 </section>
 <section id="program-przedmiotu" class="level2">
 <h2 class="anchored" data-anchor-id="program-przedmiotu">Program przedmiotu</h2>
 <ol type="1">
-<li>Modelowanie, uczenie i predykcja w trybie wsadowym (offline learning) i przyrostowym (online learning). Problemy przyrostowego uczenia maszynowego.</li>
-<li>Modele przetwarzania danych w Big Data. Od plików płaskich do Data Lake. Mity i fakty przetwarzania danych w czasie rzeczywistym.</li>
-<li>Systemy NRT (near real-time systems), pozyskiwanie danych, streaming, analityka.</li>
-<li>Algorytmy estymacji parametrów modelu w trybie przyrostowym. Stochastic Gradient Descent.</li>
-<li>Architektura Lambda i Kappa. Zaprojektowanie architektury IT dla przetwarzania danych w czasie rzeczywistym.</li>
+<li>Od plików płaskich do Data Mash. Modele przetwarzania danych w Big Data.</li>
+<li>ETL i modelowanie w trybie wsadowym (offline learning) i przyrostowym (online learning). Map-Reduce.</li>
+<li>Strumienie danych, zdarzenia i koncepcje czasu i okien czasowych w przetwarzaniu danych w czasie rzeczywistym.</li>
+<li>Mikroserwisy i komuniakcja przez REST API.</li>
+<li>Współczesne architektury aplikacji do przetwarzania danych strumieniowych - Lambda, Kappa, Pub/Sub.</li>
+<li>Przetwarzanie ustrukturyzowanych i niestrukturyzowanych danych. Środowisko programistyczne dla języka Python.</li>
+<li>Wykorzystanie obiektowych elementów Pythona w procesie modelowania za pomocą Scikit-Learn i Keras</li>
+<li>Podstawy OOP dla języka Python. Budowa klasy dla algorytmu błądzenia losowego, Perceprtonu i Adeline.</li>
 <li>Przygotowanie mikroserwisu z modelem ML do zastosowania produkcyjnego.</li>
-<li>Strukturyzowane i niestrukturyzowane dane. Relacyjne bazy danych i bazy NoSQL</li>
-<li>Agregacje i raportowanie w bazach NoSQL (na przykładzie bazy Cassandra).</li>
-<li>Podstawy obiektowego programowania w Pythonie w analizie regresji liniowej, logistycznej oraz sieci neuronowych z wykorzystaniem biblioteki sklearn, TensorFLow i Keras</li>
-<li>Architektura IT przetwarzania Big Data. Przygotowanie wirtualnego środowiska dla Sparka. Pierwszy program w PySpark. Wykorzystanie przygotowanego środowiska do analizy danych z serwisu Twitter.</li>
-<li>Analiza 1 Detekcja wyłudzeń w zgłoszeniach szkód samochodowych w czasie rzeczywistym z wykorzystaniem przygotowanego, darmowego środowiska. Cz 1.</li>
-<li>Analiza 1 Detekcja wyłudzeń w zgłoszeniach szkód samochodowych w czasie rzeczywistym z wykorzystaniem przygotowanego, darmowego środowiska. Cz 2.</li>
-<li>Przygotowanie środowiska Microsoft Azure. Detekcja anomalii i wartości odstających w logowanych zdarzeniach sieci Ethernet cz 1.</li>
-<li>Analiza 2 Detekcja anomalii i wartości odstających w logowanych zdarzeniach sieci Ethernet cz 2. Inne narzędzia IT do szybkiej analizy logów.</li>
-<li>Narzędzia SAS do strumieniowego przetwarzania danych</li>
+<li>Strumieniowanie danych z wykorzystaniem RDD dla Apache Spark. Wprowadzenie do obiektu DataFrame.</li>
 </ol>
 </section>
 <section id="efekty-kształcenia" class="level2">
@@ -243,17 +237,15 @@ ul.task-list li input[type="checkbox"] {
 <li>kolokwium 30%</li>
 <li>referaty/eseje 40%</li>
 </ul>
-</section>
-<section id="literatura" class="level2">
-<h2 class="anchored" data-anchor-id="literatura">Literatura</h2>
+<p>## Literatura</p>
 <ol type="1">
-<li>Zając S., red. “Modelowanie dla biznesu, Analityka w czasie rzeczywistym - narzędzia informatyczne i biznesowe”, Oficyna Wydawnicza SGH, Warszawa 2022</li>
-<li>Frątczak E., red. “Modelowanie dla biznesu, Regresja logistyczna, Regresja Poissona, Survival Data Mining, CRM, Credit Scoring”. SGH, Warszawa 2019.</li>
-<li>Frątczak E., red., “Zaawansowane metody analiz statystycznych”, Oficyna Wydawnicza SGH, Warszawa 2012.</li>
-<li>Bellemare A., “Mikrousługi oparte na zdarzeniach. Wykorzystanie danych w organizacji na dużą skalę”, O’Reilly 2021</li>
-<li>Lakshmanan V., Robinson S., Munn M., “Wzorce projektowe uczenia maszynowego. Rozwiązania typowych problemów dotyczących przygotowania danych, konstruowania modeli i MLOps”, O’Reilly 2021</li>
-<li>Shapira G., Palino T., Sivaram R., Petty K., “Kafka the definitive guide. Real-time data and stream processing at scale” O’Reilly 2022</li>
-<li>Gift N., Deza A., “Practical MLOps. Operationalizing Machine Learning Models”, O’Reilly 2022.</li>
+<li>Zając S. “Modelowanie dla biznesu. Analityka w czasie rzeczywistym - narzędzia informatyczne i biznesowe. Oficyna Wydawnicza SGH, Warszawa 2022</li>
+<li>K. Przanowski K. , Zając S. red. “Modelowanie dla biznesu, metody ML, modele portfela CF, modele rekurencyjne, analizy przeżycia, modele scoringowe, SGH, Warszawa 2020.</li>
+<li>Frątczak E., red. “Modelowanie dla biznesu, Regresja logistyczna, Regresja Poissona, Survival Data Mining, CRM, Credit Scoring”. SGH, Warszawa 2019.</li>
+<li>S. Raschka, Python. Uczenie maszynowe. Wydanie II</li>
+<li>Maas G., Garillot F. Stream Processing with Apache Spark, O’Reilly, 2021</li>
+<li>F. Hueske, V. Kalavri Stream Processing with Apache Flink, O’Reilly, 2021</li>
+<li>Nandi A. “Spark for Python Developers”, 2015</li>
 </ol>
 </section>
 <section id="literatura-uzupełniająca" class="level2">
