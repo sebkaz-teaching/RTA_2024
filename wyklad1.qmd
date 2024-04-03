@@ -122,11 +122,11 @@ Dzięki tak otrzymanym tabelom cech możemy stosować algorytmy  tj. `XGBoost` l
 
 
 Podstawowe systemy bazodanowe związane z językiem SQL również realizują modele danych, w których dane ładnowane są do (ustrukturyzowanych) tabel.
-```{python}
+<!-- ```{python}
 import sqlite3
 engine = sql.connect("database.sqlite")
 df.to_sql('kredyt' , con=engine, index=False)
-```
+``` -->
 
 
 **Dane nieustrukturyzowane** to takie, które nie są ułożone wtabelarycznej postaci.
