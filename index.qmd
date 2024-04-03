@@ -38,9 +38,9 @@ Tematy zrealizowane:
 3. <del>11-03-2024 (poniedziałek) 09:50-11:30 - Wykład 3</del>
 Tematy zrealizowane:
 
-4. 18-03-2024 (poniedziałek) 09:50-11:30 - Wykład 4
+4. <del>18-03-2024 (poniedziałek) 09:50-11:30 - Wykład 4</del>
 
-5. 25-03-2024 (poniedziałek) 09:50-11:30 - Wykład 5
+5. <del>25-03-2024 (poniedziałek) 09:50-11:30 - Wykład 5</del>
 
 - TEST 20 pytań! - 30 minut.
 - Przygotowanie środowiska pracy
@@ -49,33 +49,33 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 
 #### Laboratoria
 
-1. 08-04-2024 (poniedziałek) 08:00-13:20 - C1A 3 grupy 
-1. 09-04-2024 (wtorek) 09:50-17:00 - C2B 3 grupy 
+1. 08-04-2024 (poniedziałek) 08:00-13:20 - C2D 3 grupy 
+1. 09-04-2024 (wtorek) 09:50-17:00 - Sabinki 16 3 grupy 
 
-2. 15-04-2024 (poniedziałek) 08:00-13:30 - C1A, 3 grupy 
-2. 16-04-2024 (wtorek) 09:50-17:00 - C2B, 3 grupy 
+2. 15-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy 
+2. 16-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
 
-3. 22-04-2024 (poniedziałek) 08:00-13:30 - C1A, 3 grupy
-3. 23-04-2024 (wtorek) 09:50-17:00 - C2B, 3 grupy 
+3. 22-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy
+3. 23-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
 
-4. 29-04-2024 (poniedziałek) 08:00-13:30 - C1A, 3 grupy 
-4. 30-04-2024 (wtorek) 09:50-17:00 - C2B, 3 grupy 
+4. 29-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy 
+4. 30-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
 
-5. 06-05-2024 (poniedziałek) 08:00-13:30 - C1A, 3 grupy
-5. 07-05-2024 (wtorek) 09:50-17:00 - C2B, 3 grupy 
+5. 06-05-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy
+5. 07-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
 
 6. 13-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-6. 14-05-2024 (wtorek) 09:50-17:00 - C2B, 3 grupy 
+6. 14-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
 
 7. 20-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-7. 21-05-2024 (wtorek) 09:50-17:00 - C2B, 3 grupy
+7. 21-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy
 
 8. 27-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-8. 28-05-2024 (wtorek) 09:50-17:00 - C2B, 3 grupy 
+8. 28-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
 
 9. 03-06-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-9. 04-06-2024 (wtorek) 11:40-17:00 - C2B, 3 grupy
-- Apache Kafka i Apache Spark Streaming
+9. 04-06-2024 (wtorek) 11:40-17:00 - Sabinki 16, 3 grupy
+
 
 
 
@@ -95,7 +95,7 @@ Przedstawiający krok po kroku
 #### Miejsce
 
 Wykłady 1-5: G-Aula II
-Laboratorium 1-9: C1A, C2B
+Laboratorium 1-9: C2D, Sabinki 16
 
 #### Zaliczenie i Egzamin
 
