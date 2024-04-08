@@ -4,24 +4,25 @@ project:
 
 website: 
   title: Analiza danych w czasie rzeczywistym
+  sidebar:
+    style: "docked"
+    contents:
+      - index.qmd
+      - section : "Wykłady"
+        contents:
+          - wyklad1.qmd
+          - wyklad2.qmd
+          - wyklad3.qmd
+          - wyklad4.qmd
+      - section : "Ćwiczenia"
+        contents:
+          - lab/cw1.ipynb
   navbar:
     left: 
           - href: index.qmd
             text: 222890-D
           - href: indexS.qmd
             text: 222890-S
-          - href: wyklad1.qmd
-            text: Wykład 1
-          - href: wyklad2.qmd
-            text: Wykład 2
-          - href: wyklad3.qmd
-            text: Wykład 3
-          - href: wyklad4.qmd
-            text: Wykład 4
-          # - href: wyklad1S.qmd
-          #   text: Wykład SN1
-          # - href: wyklad2S.qmd
-          #   text: Wykład SN2
           - href: sylabus.qmd
             text: Sylabus
           - href: info.qmd

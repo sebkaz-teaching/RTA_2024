@@ -27,7 +27,7 @@ Tematy reazlizowane na wykładzie:
     - Biznesowe wymagania dla strumieni danych
    
 
-2. 16-03-2024 (sobota) 08:00-09:30 - Wykład 2 - G Aula VI
+2. <del>16-03-2024 (sobota) 08:00-09:30 - Wykład 2 - G Aula VI</del>
 Tematy: 
     - Definicje: Zdarzenie, strumień zdarzeń, analiza i przetwarzanie strumieni zdarzeń, 
     - Narzędzie i aplikacje przetwarzania strumieniowego
@@ -36,8 +36,8 @@ Tematy:
 
 #### laboratorium
 
-1. 06-04-2024 (sobota) 08:00-15:00 - G116 4 grupy 
-1. 07-04-2024 (niedziela) 09:50-17.00 - G116 4 grupy
+1. <del>06-04-2024 (sobota) 08:00-15:00 - G116 4 grupy </del>
+1. <del>07-04-2024 (niedziela) 09:50-17.00 - G116 4 grupy</del>
 
 
 2. 20-04-2024 (sobota) 08:00-15:00 - G116 4 grupy
