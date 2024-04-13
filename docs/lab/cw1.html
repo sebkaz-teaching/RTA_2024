@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym</title>
+<title>Analiza danych w czasie rzeczywistym - Środowisko produkcyjne z modelem ML</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -119,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw1.html">cw1.html</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw1.html">Środowisko produkcyjne z modelem ML</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -184,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab/cw1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">cw1.html</span></a>
+ <span class="menu-text">Środowisko produkcyjne z modelem ML</span></a>
   </div>
 </li>
       </ul>
@@ -195,16 +229,75 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#kod-minimalnej-aplikacji-flask" id="toc-kod-minimalnej-aplikacji-flask" class="nav-link active" data-scroll-target="#kod-minimalnej-aplikacji-flask">Kod minimalnej aplikacji flask</a></li>
+  <li><a href="#środowisko-python" id="toc-środowisko-python" class="nav-link" data-scroll-target="#środowisko-python">Środowisko Python</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw1.html">Środowisko produkcyjne z modelem ML</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Środowisko produkcyjne z modelem ML</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<p>Naszym zadaniem jest wystawić aplikację w pythonie realizującą zadania REST API. Na ządanie klienta serwer udzieli odpowiedzi na podstawie predykcji wygenerowanej z jakiegoś modelu. Ponadto obraz ten zostanie skonterenryzowany z wykorzystaniem pliku <code>Dockerfile</code> dzięki czemu uruchomienie serwera stanie się mozliwe nie zaleznie od platformy.</p>
+<p>Nasze zadanie zrealizujemy z wykorzystaniem biblioteki <code>Flask</code> w wersji <code>3.0.3</code>.</p>
+<p>Istnieją inne biblioteki realizujące to zadanie. &gt; Sprawdź samodzielnie w domu czy potrafisz je uzyć, albo przynajmniej przeczytać kod.</p>
+<ol type="1">
+<li>FastAPI</li>
+<li>Seldon</li>
+<li>MLFlow</li>
+<li>Node js - Express</li>
+</ol>
+<section id="kod-minimalnej-aplikacji-flask" class="level3">
+<h3 class="anchored" data-anchor-id="kod-minimalnej-aplikacji-flask">Kod minimalnej aplikacji flask</h3>
+<p>Naszą aplikację chcemy uruchomić lokalnie a potem w łatwy sposób przenieść i wykonać na dowolnym komputerze. Z tej przyczyny naturalnym rozwiązaniem jest zapis kodu do pliku z rozszerzeniem <code>.py</code>.</p>
+<p>W celu autozapisu kodu aplikacji do pliku <code>app.py</code> wykorzystamy magiczną komendę <code>%%file plik.py</code>.</p>
+<div id="cell-2" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span><span class="bu">file</span> app.py</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a flask</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an API end point</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">'/hello'</span>, methods<span class="op">=</span>[<span class="st">'GET'</span>])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hello():</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hello World"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    app.run() <span class="co"># domyślnie ustawia localhost i port 5000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p>Uwaga! w dokumentacji Flask w przykładowym kodzie nie występują ostatnie dwie liniki uruchamiające serwer.</p>
+</blockquote>
+</section>
+<section id="środowisko-python" class="level2">
+<h2 class="anchored" data-anchor-id="środowisko-python">Środowisko Python</h2>
+<p>Przed przystąpieniem do realizacji projektu</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

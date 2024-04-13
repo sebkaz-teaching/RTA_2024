@@ -413,6 +413,30 @@
     ]
   },
   {
+    "objectID": "lab/cw1.html",
+    "href": "lab/cw1.html",
+    "title": "Środowisko produkcyjne z modelem ML",
+    "section": "",
+    "text": "Naszym zadaniem jest wystawić aplikację w pythonie realizującą zadania REST API. Na ządanie klienta serwer udzieli odpowiedzi na podstawie predykcji wygenerowanej z jakiegoś modelu. Ponadto obraz ten zostanie skonterenryzowany z wykorzystaniem pliku Dockerfile dzięki czemu uruchomienie serwera stanie się mozliwe nie zaleznie od platformy.\nNasze zadanie zrealizujemy z wykorzystaniem biblioteki Flask w wersji 3.0.3.\nIstnieją inne biblioteki realizujące to zadanie. &gt; Sprawdź samodzielnie w domu czy potrafisz je uzyć, albo przynajmniej przeczytać kod.",
+    "crumbs": [
+      "222890-D",
+      "Ćwiczenia",
+      "Środowisko produkcyjne z modelem ML"
+    ]
+  },
+  {
+    "objectID": "lab/cw1.html#środowisko-python",
+    "href": "lab/cw1.html#środowisko-python",
+    "title": "Środowisko produkcyjne z modelem ML",
+    "section": "Środowisko Python",
+    "text": "Środowisko Python\nPrzed przystąpieniem do realizacji projektu",
+    "crumbs": [
+      "222890-D",
+      "Ćwiczenia",
+      "Środowisko produkcyjne z modelem ML"
+    ]
+  },
+  {
     "objectID": "wyklad4.html",
     "href": "wyklad4.html",
     "title": "Analiza danych w czasie rzeczywistym",
