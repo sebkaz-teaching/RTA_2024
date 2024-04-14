@@ -275,8 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>MLFlow</li>
 <li>Node js - Express</li>
 </ol>
-<section id="kod-minimalnej-aplikacji-flask" class="level3">
-<h3 class="anchored" data-anchor-id="kod-minimalnej-aplikacji-flask">Kod minimalnej aplikacji flask</h3>
+<section id="kod-minimalnej-aplikacji-flask" class="level2">
+<h2 class="anchored" data-anchor-id="kod-minimalnej-aplikacji-flask">Kod minimalnej aplikacji flask</h2>
 <p>Naszą aplikację chcemy uruchomić lokalnie a potem w łatwy sposób przenieść i wykonać na dowolnym komputerze. Z tej przyczyny naturalnym rozwiązaniem jest zapis kodu do pliku z rozszerzeniem <code>.py</code>.</p>
 <p>W celu autozapisu kodu aplikacji do pliku <code>app.py</code> wykorzystamy magiczną komendę <code>%%file plik.py</code>.</p>
 <div id="cell-2" class="cell">
@@ -429,44 +429,48 @@ jeszcze cos</code></pre>
 <p>Polecenie <code>RUN</code> pozwala uruchomić dowolne polecenie bash wewnątrz obrazu dockera.</p>
 <p>Polecenie <code>CMD</code> pozwala uruchomić polecenie uruchamiające serwer w trybie tak by nie zamknąć tego polecenia.</p>
 <p>Ostatnią informacją jest ustalenie portu na 8000.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utworzenie kontenera na podstawie pliku Dockerfile</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> modelML .</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># uruchomienie kontenera</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-p</span> 8000:8000 modelML</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="uruchomienie-serwera-lokalnie" class="level2">
 <h2 class="anchored" data-anchor-id="uruchomienie-serwera-lokalnie">Uruchomienie serwera lokalnie</h2>
 <p>Uruchomienie serwera moze odbyć się na przynajmniej na dwa sposoby.</p>
 <section id="uruchomienie-serwera-przez-terminal" class="level3">
 <h3 class="anchored" data-anchor-id="uruchomienie-serwera-przez-terminal">Uruchomienie serwera przez terminal</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> app.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> app.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>lub (jeśli nie ma kodu <code>app.run()</code> uruchamiającego serwer.)</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flask</span> run </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flask</span> run </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Powinna pojawić się informacja podobna do ponizszej:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> Serving Flask app <span class="st">'app'</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> Debug mode: off</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ex">WARNING:</span> This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> Running on http://127.0.0.1:5000</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Press</span> CTRL+C to quit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> Serving Flask app <span class="st">'app'</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> Debug mode: off</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">WARNING:</span> This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">*</span> Running on http://127.0.0.1:5000</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Press</span> CTRL+C to quit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="uruchomienie-serwera-przez-notatnik" class="level3">
 <h3 class="anchored" data-anchor-id="uruchomienie-serwera-przez-notatnik">Uruchomienie serwera przez notatnik</h3>
 <p>Bezpośrenie uruchomienia kodu w notatniku spowoduje uruchomienie serwera i zatrzymanie jakiejkolwiek mozliwości realizacji kodu. Aby tego uniknąć mozesz wykorzystać bibliotekę <code>subprocess</code>.</p>
 <div id="cell-15" class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subporcess</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> subprocess.Popen([<span class="st">"python"</span>, <span class="st">"app.py"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subporcess</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> subprocess.Popen([<span class="st">"python"</span>, <span class="st">"app.py"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Jeśli potrzebujemy zamknąć subprocess wykonaj:</p>
 <div id="cell-17" class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>p.kill()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p.kill()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Posiadając uruchomiony serwer mozesz odpytac serwer wykorzystując:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> localhost:5000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> localhost:5000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>albo kod w notatniku:</p>
 <div id="cell-19" class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">"http://127.0.0.1:5000/"</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.content) <span class="co"># Hello World</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code) <span class="co"># 200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">"http://127.0.0.1:5000/"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.content) <span class="co"># Hello World</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code) <span class="co"># 200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
