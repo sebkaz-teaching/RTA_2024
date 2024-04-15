@@ -17,6 +17,7 @@ website:
       - section : "Ćwiczenia"
         contents:
           - lab/cw1.ipynb
+          - lab/cw2.ipynb
   navbar:
     left: 
           - href: index.qmd
