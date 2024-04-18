@@ -50,10 +50,15 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 #### Laboratoria
 
 1. <del>08-04-2024 (poniedziałek) 08:00-13:20 - C2D 3 grupy </del>
-1. 09-04-2024 (wtorek) 09:50-17:00 - Sabinki 16 3 grupy 
+1. <del>09-04-2024 (wtorek) 09:50-17:00 - Sabinki 16 3 grupy </del>
 
-2. 15-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy 
-2. 16-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
+- Wprowadzenie do środowiska Python - API FLask
+
+2. <del>15-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy </del>
+2. <del>16-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy </del>
+
+- API Flask kontrola zapytań i odpowiedzi
+- Producent Apache Kafka
 
 3. 22-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy
 3. 23-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
