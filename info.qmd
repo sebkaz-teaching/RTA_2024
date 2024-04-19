@@ -12,6 +12,15 @@ Jeśli nie odnaleziono komendy uruchom polecenie:
 ```bash
 python3
 ```
+Jeśli zadne z powyzszych poleceń nie działa, oznacza to, ze nie posiadasz interpretera python na swoim komputerze i musisz go doinstalować.
+
+Sprawdź równiez polecenia 
+```bash
+python -m pip --version
+python -m pip3 --version
+```
+
+Polecenia `pip`  słuzą do instalacji pakietów.
 
 Zwróć uwagę, aby Twoja wersja nie była niższa niż 3.X
 Aby wyjść z powłoki pythona użyj funkcji `exit()`
@@ -20,35 +29,52 @@ Python 3.10.9 (main, Dec 15 2022, 17:11:09) [Clang 14.0.0 (clang-1400.0.29.202)]
 Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 ```
-### Nowe środowisko pythona
+
+Warto zweryfikować równiez informację do którego środowiska pythona odnosi się poszczególna komenda.
+
+### Nowe środowisko wirtualne
+
+Do efektywnej pracy nad dowolnym projektem, zaleca się utworzenie dedykowanego środowiska wirtualnego z bibliotekami dostosowanymi do potrzeb konkretnego projektu. 
+Takie podejście pozwala uniknąć problemów związanych z nadpisywaniem bibliotek.
 
 ```bash
-python3 -m venv <name of env>
-
-source <name of env>/bin/activate
+python3 -m venv venv
+# uruchom środowisko
+source venv/bin/activate
 # . env/bin/activate
 
 (venv)$ 
 ```
+W powyzszym przykładzie wykorzystaliśmy pakiet `venv` (`python -m venv`) do utworzenia nowego środowiska (katalogu) o nazwie `venv`.  
 
-Szybka instalacja podstawowych bibliotek i jupyterlab.
+Uruchomienie środowiska odbywa się z wykorzystaniem komendy `source` (lub `.`).  
+Pamiętaj, ze w przypadku systemu Windows środowisko uruchamia się przez 
+```bash
+venv/Scripts/activate
+```
+
+Posiadając nowe (puste) środowisko wykonaj następujące czynności: 
+1. Zainstaluj nowe wersje podstawowych pakietów 
 ```bash
 pip install --no-cache --upgrade pip setuptools
+```
 
-pip install jupyterlab numpy pandas matplotlib scipy
-# jeśli masz plik requirements.txt z potrzebnymi bibliotekami
-pip install -r requirements.txt
+Szybka instalacja podstawowych bibliotek i jupyter notebook.
+```bash
+
+pip install notebook numpy pandas matplotlib scipy
+
 # uruchom 
-jupyterlab
+jupyter notebook
 ```
 W przeglądarce internetowej wpisz: _localhost:8888_
 
 Po ponownym uruchomieniu przejdź do katalogu w którym utworzyłeś środowisko, 
-następnie uruchom środowisko i jupyterlab.
+następnie uruchom środowisko i jupyter.
 
 ```bash
 source <name of env>/bin/activate
-jupyterlab
+jupyter notebook
 ```
 ### Naucz się Pythona w 2 godziny
 
