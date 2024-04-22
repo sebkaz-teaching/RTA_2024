@@ -18,6 +18,7 @@ website:
         contents:
           - lab/cw1.ipynb
           - lab/cw2.ipynb
+          - lab/cw3.ipynb
   navbar:
     left: 
           - href: index.qmd

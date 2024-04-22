@@ -60,8 +60,10 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 - API Flask kontrola zapytań i odpowiedzi
 - Producent Apache Kafka
 
-3. 22-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy
+3. <del>22-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy</del>
 3. 23-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
+
+- Dane ustrukturyzowane i ich modelowanie
 
 4. 29-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy 
 4. 30-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
