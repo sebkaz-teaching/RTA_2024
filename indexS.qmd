@@ -16,7 +16,7 @@ Inne książki zamieszczone zostały w zakładce [książki](/RTA_2024/ksiazki)
 
 ## Kalendarz
 
-#### Wykład
+### Wykład
 
 1. <del>02-03-2024 (sobota) 08:00-09:30 - Wykład 1 - G Aula VI</del>
 Tematy reazlizowane na wykładzie:
@@ -34,7 +34,7 @@ Tematy:
     - API klient-serwer, Pub-Sub i Apache Kafka
 
 
-#### laboratorium
+### laboratorium
 
 1. <del>06-04-2024 (sobota) 08:00-15:00 - G116 4 grupy </del>
 1. <del>07-04-2024 (niedziela) 09:50-17.00 - G116 4 grupy</del>
@@ -42,8 +42,14 @@ Tematy:
 - Wprowadzenie do środowiska Python
 - Flask API
 
-2. 20-04-2024 (sobota) 08:00-15:00 - G116 4 grupy
-2. 21-04-2024 (niedziela) 09:50-17.00 - G116 4 grupy
+2. <del>20-04-2024 (sobota) 08:00-15:00 - G116 4 grupy</del>
+2. <del>21-04-2024 (niedziela) 09:50-17.00 - G116 4 grupy</del>
+
+- dane ustrukturyzowane
+- dane nieustrukturyzowane
+- obiektowe podejście do modelowania danych
+- podłączenie do bazy relacyjnej (sqlite)
+- podłączenie do bazy nierelacyjnej (mongodb)
 
 
 3. 04-05-2024 (sobota) 08:00-15:00 - G116 4 grupy

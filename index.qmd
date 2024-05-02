@@ -15,7 +15,7 @@ Ciekawe książki i strony internetowe zamieszczone zostały w zakładce [ksią�
 
 ## Kalendarz
 
-#### Wykład 
+### Wykład 
 
 Wykład jest realizowany w trybie stacjonarnym.
 Jest on NIEOBOWIĄZKOWY i odbywa się w Auli II bud G
@@ -47,7 +47,7 @@ Tematy zrealizowane:
     
 Test przeprowadzany jest za pośrednictwem MS Teams.
 
-#### Laboratoria
+### Laboratoria
 
 1. <del>08-04-2024 (poniedziałek) 08:00-13:20 - C2D 3 grupy </del>
 1. <del>09-04-2024 (wtorek) 09:50-17:00 - Sabinki 16 3 grupy </del>
@@ -61,12 +61,14 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 - Producent Apache Kafka
 
 3. <del>22-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy</del>
-3. 23-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
+3. <del>23-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy</del> 
 
 - Dane ustrukturyzowane i ich modelowanie
+- Zadania: czyszczenie danych tabelarycznych
 
-4. 29-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy 
-4. 30-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
+4. <del>29-04-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy </del>
+4. <del>30-04-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy </del>
+- Godziny rektorskie
 
 5. 06-05-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy
 5. 07-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
@@ -85,7 +87,6 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 
 
 
-
 <!-- 
 W przyszłym roku zrobić na ostatnich zajęciach test z ćwiczeń. 
 
@@ -99,12 +100,12 @@ Przedstawiający krok po kroku
 - wizualizacja danych w pythonie z podłączenia mongodb - ile razy pojawia się przekrocznie - to też na ćwiczeniach
 -->
 
-#### Miejsce
+### Miejsce
 
 Wykłady 1-5: G-Aula II
 Laboratorium 1-9: C2D, Sabinki 16
 
-#### Zaliczenie i Egzamin
+### Zaliczenie i Egzamin
 
 Wykłady zakończone zostaną testem (ostatnie zajęcia).
 Pozytywna ocena z testu (powyżej 13 pkt) upoważnia do realizacji ćwiczeń. 

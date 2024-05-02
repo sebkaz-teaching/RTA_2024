@@ -92,6 +92,7 @@ Utwórz konto na [Kaggle](https://kaggle.com), przejdź do zakładki `Courses` i
 
 
 ## Zacznij korzystać z serwisu GitHub
+
 <div id="git"></div>
 Tekst na podstawie strony [jak korzystać z serwisu github](http://pbiecek.github.io/Przewodnik/Programowanie/jak_korzystac_z_serwisu_github_i_waffle.html)
 
@@ -172,6 +173,7 @@ Warto obejrzeć [Youtube course](https://www.youtube.com/watch?v=HVsySz-h9r4).
 Ciekawe i proste wprowadzenie mozna znaleźć [tutaj](http://rogerdudler.github.io/git-guide/index.pl.html)
 
 ## Zacznij korzystać z Dockera
+
 <div id="docker"></div>
 W celu pobrania oprogramowania docker na swój system przejdź do [strony](https://docs.docker.com/get-docker/).
 
