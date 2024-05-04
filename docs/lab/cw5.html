@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym - przypomnienie - dane ustruktyryzowane</title>
+<title>Analiza danych w czasie rzeczywistym - Budowa klasy dla algorytmu błądzenia losowego, Perceprtonu i Adeline.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -185,7 +185,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw5.html">przypomnienie - dane ustruktyryzowane</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw5.html">Budowa klasy dla algorytmu błądzenia losowego, Perceprtonu i Adeline.</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -268,13 +268,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab/cw4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">dane nieustruktyryzowane</span></a>
+ <span class="menu-text">Dane nieustruktyryzowane</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab/cw5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">przypomnienie - dane ustruktyryzowane</span></a>
+ <span class="menu-text">Budowa klasy dla algorytmu błądzenia losowego, Perceprtonu i Adeline.</span></a>
   </div>
 </li>
       </ul>
@@ -289,12 +289,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gradient-prosty" id="toc-gradient-prosty" class="nav-link active" data-scroll-target="#gradient-prosty">Gradient prosty</a>
+  <li><a href="#modelowanie" id="toc-modelowanie" class="nav-link active" data-scroll-target="#modelowanie">Modelowanie</a></li>
+  <li><a href="#gradient-prosty" id="toc-gradient-prosty" class="nav-link" data-scroll-target="#gradient-prosty">Gradient prosty</a>
   <ul class="collapse">
   <li><a href="#wsadowy-gradient-prosty" id="toc-wsadowy-gradient-prosty" class="nav-link" data-scroll-target="#wsadowy-gradient-prosty">Wsadowy gradient prosty</a></li>
   </ul></li>
   <li><a href="#stochastic-gradient-descent" id="toc-stochastic-gradient-descent" class="nav-link" data-scroll-target="#stochastic-gradient-descent">Stochastic gradient descent</a></li>
-  <li><a href="#perceptron-i-oop" id="toc-perceptron-i-oop" class="nav-link" data-scroll-target="#perceptron-i-oop">Perceptron i OOP</a>
+  <li><a href="#podstawy-oop-dla-języka-python" id="toc-podstawy-oop-dla-języka-python" class="nav-link" data-scroll-target="#podstawy-oop-dla-języka-python">Podstawy OOP dla języka Python</a>
   <ul class="collapse">
   <li><a href="#sztuczne-neurony---rys-historyczny" id="toc-sztuczne-neurony---rys-historyczny" class="nav-link" data-scroll-target="#sztuczne-neurony---rys-historyczny">Sztuczne neurony - rys historyczny</a></li>
   </ul></li>
@@ -304,9 +305,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw5.html">przypomnienie - dane ustruktyryzowane</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw5.html">Budowa klasy dla algorytmu błądzenia losowego, Perceprtonu i Adeline.</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">przypomnienie - dane ustruktyryzowane</h1>
+<h1 class="title">Budowa klasy dla algorytmu błądzenia losowego, Perceprtonu i Adeline.</h1>
 </div>
 
 
@@ -326,6 +327,8 @@ window.Quarto = {
 <div id="6b675f7f-e15a-4fcc-ac00-a9202855af6c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Image</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="modelowanie" class="level2">
+<h2 class="anchored" data-anchor-id="modelowanie">Modelowanie</h2>
 <p>Na poprzednich zajęciach omawialiśmy wykorzystanie modelu regresji liniowej dla danych ustrukturyzowanych. W najprostszym przypadku dla jednej zmiennej X i jednej zmiennej celu moglibyśmy np. przypisać model w postaci:</p>
 <p>satysfakcja_z_zycia = <span class="math inline">\(\alpha_0\)</span> + <span class="math inline">\(\alpha_1\)</span> PKB_per_capita</p>
 <p><span class="math inline">\(\alpha_0\)</span> nazywamy punktem odcięcia (<em>intercept</em>) albo punktem obciążenia (<em>bias</em>)</p>
@@ -417,6 +420,7 @@ predykcja [[4.21509616]
        [2.77011339]])</code></pre>
 </div>
 </div>
+</section>
 <section id="gradient-prosty" class="level2">
 <h2 class="anchored" data-anchor-id="gradient-prosty">Gradient prosty</h2>
 <p>Pamiętaj o standaryzacji zmiennych (aby były one reprezentowane w tej samej skali).</p>
@@ -509,8 +513,8 @@ predykcja [[4.21509616]
 </div>
 </div>
 </section>
-<section id="perceptron-i-oop" class="level2">
-<h2 class="anchored" data-anchor-id="perceptron-i-oop">Perceptron i OOP</h2>
+<section id="podstawy-oop-dla-języka-python" class="level2">
+<h2 class="anchored" data-anchor-id="podstawy-oop-dla-języka-python">Podstawy OOP dla języka Python</h2>
 <div id="b2c5bf2e-58fd-4f64-b7eb-0775a0e0b37e" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
