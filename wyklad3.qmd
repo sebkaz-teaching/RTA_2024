@@ -1,5 +1,5 @@
 ---
-title: "Mikroserwisy "
+title: "Mikroserwisy i komuniakcja przez REST API."
 --- 
 
 Komunikacja sieciowa, relacyjne bazy danych, rozwiązania chmurowe i big data znacząco zmieniły sposób budowania systemów informatycznych i wykonywnia na niach pracy. 

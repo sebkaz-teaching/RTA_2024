@@ -1,5 +1,5 @@
 ---
-title: "Analiza strumieni danych "
+title: "Analiza strumieni danych"
 --- 
 
 ## Batch vs Stream Processing

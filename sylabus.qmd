@@ -42,7 +42,7 @@ Tak, aby oprócz umiejętności i znajomości technik analitycznych studenci poz
 1. Od plików płaskich do Data Mash. Modele przetwarzania danych w Big Data.
 2. ETL i modelowanie w trybie wsadowym (offline learning) i przyrostowym (online learning). Map-Reduce.
 3. Strumienie danych, zdarzenia i koncepcje czasu i okien czasowych w przetwarzaniu danych w czasie rzeczywistym. 
-4. Mikroserwisy i komuniakcja przez REST API.
+4. Mikroserwisy i komunikacja przez REST API.
 5. Współczesne architektury aplikacji do przetwarzania danych strumieniowych - Lambda, Kappa, Pub/Sub.
 6. Przetwarzanie ustrukturyzowanych i niestrukturyzowanych danych. Środowisko programistyczne dla języka Python. 
 7. Wykorzystanie obiektowych elementów Pythona w procesie modelowania za pomocą Scikit-Learn i Keras
