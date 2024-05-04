@@ -265,11 +265,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#gotowy-model-dla-klasyfikacji-obrazów" id="toc-gotowy-model-dla-klasyfikacji-obrazów" class="nav-link" data-scroll-target="#gotowy-model-dla-klasyfikacji-obrazów">gotowy model dla klasyfikacji obrazów</a></li>
   <li><a href="#jeszcze-obrazki" id="toc-jeszcze-obrazki" class="nav-link" data-scroll-target="#jeszcze-obrazki">jeszcze obrazki</a></li>
   <li><a href="#format-json" id="toc-format-json" class="nav-link" data-scroll-target="#format-json">Format json</a></li>
-  <li><a href="#tekst" id="toc-tekst" class="nav-link" data-scroll-target="#tekst">tekst</a></li>
-  <li><a href="#obiektowe-podejście-do-modelowania" id="toc-obiektowe-podejście-do-modelowania" class="nav-link" data-scroll-target="#obiektowe-podejście-do-modelowania">Obiektowe podejście do modelowania</a>
-  <ul class="collapse">
-  <li><a href="#napisz-własną-klasę-która-zrealizuje-trnsformacje-za-ciebie" id="toc-napisz-własną-klasę-która-zrealizuje-trnsformacje-za-ciebie" class="nav-link" data-scroll-target="#napisz-własną-klasę-która-zrealizuje-trnsformacje-za-ciebie">NAPISZ WŁASNĄ KLASĘ KTÓRA ZREALIZUJE TRNSFORMACJE ZA CIEBIE</a></li>
-  </ul></li>
+  <li><a href="#tekst-i-model-bow" id="toc-tekst-i-model-bow" class="nav-link" data-scroll-target="#tekst-i-model-bow">Tekst i model BoW</a></li>
+  <li><a href="#obiekty-pipeline-w-modelowaniu" id="toc-obiekty-pipeline-w-modelowaniu" class="nav-link" data-scroll-target="#obiekty-pipeline-w-modelowaniu">Obiekty pipeline w modelowaniu</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -708,8 +705,8 @@ Epoch 5/5
 </div>
 <p>znajdz inne metody realizujące <code>select * from table where...</code></p>
 </section>
-<section id="tekst" class="level2">
-<h2 class="anchored" data-anchor-id="tekst">tekst</h2>
+<section id="tekst-i-model-bow" class="level2">
+<h2 class="anchored" data-anchor-id="tekst-i-model-bow">Tekst i model BoW</h2>
 <div id="f46dc96e-85de-4bea-b5d8-9f9cdb53e34d" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>df_train <span class="op">=</span> pd.read_csv(<span class="st">"train.csv"</span>)</span>
@@ -1760,8 +1757,8 @@ Epoch 5/5
 </div>
 </div>
 </section>
-<section id="obiektowe-podejście-do-modelowania" class="level2">
-<h2 class="anchored" data-anchor-id="obiektowe-podejście-do-modelowania">Obiektowe podejście do modelowania</h2>
+<section id="obiekty-pipeline-w-modelowaniu" class="level2">
+<h2 class="anchored" data-anchor-id="obiekty-pipeline-w-modelowaniu">Obiekty pipeline w modelowaniu</h2>
 <div id="69a19144-7545-49cc-b534-919cbdbb8dd6" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -2061,8 +2058,9 @@ Epoch 5/5
 <pre><code>(0.8734177215189873, 0.45)</code></pre>
 </div>
 </div>
-<section id="napisz-własną-klasę-która-zrealizuje-trnsformacje-za-ciebie" class="level3">
-<h3 class="anchored" data-anchor-id="napisz-własną-klasę-która-zrealizuje-trnsformacje-za-ciebie">NAPISZ WŁASNĄ KLASĘ KTÓRA ZREALIZUJE TRNSFORMACJE ZA CIEBIE</h3>
+<blockquote class="blockquote">
+<p>NAPISZ WŁASNĄ KLASĘ KTÓRA ZREALIZUJE TRNSFORMACJE ZA CIEBIE</p>
+</blockquote>
 <div id="17bfbb06-3219-4023-8e7f-15ad9aef1d4b" class="cell" data-execution_count="68">
 <div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your own transformator class</span></span>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -2204,7 +2202,6 @@ Epoch 33/40
 </div>
 
 
-</section>
 </section>
 </section>
 
