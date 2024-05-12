@@ -52,8 +52,8 @@ Tematy:
 - podłączenie do bazy nierelacyjnej (mongodb)
 
 
-3. 04-05-2024 (sobota) 08:00-15:00 - G116 4 grupy
-3. 05-05-2024 (niedziela) 09:50-17.00 - G116 4 grupy
+3. <del>04-05-2024 (sobota) 08:00-15:00 - G116 4 grupy</del>
+3. <del>05-05-2024 (niedziela) 09:50-17.00 - G116 4 grupy</del>
  
 
 4. 25-05-2024 (sobota) 08:00-15:00 - G116 4 grupy
@@ -72,7 +72,7 @@ Laboratorium 1-5: 116 G
 
 #### Zaliczenie i Egzamin
 
-Wykłady zakończone zostaną testem (ostatnie zajęcia).
+Wykłady zakończone zostaną testem.
 Pozytywna ocena z testu (powyżej 13 pkt) upoważnia do realizacji ćwiczeń. 
 
 Po ćwiczeniach realizowane będą zadania domowe przekazywane za pośrednictwem platformy teams.  
