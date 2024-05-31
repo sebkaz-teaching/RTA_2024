@@ -73,14 +73,23 @@ Test przeprowadzany jest za pośrednictwem MS Teams.
 5. <del>06-05-2024 (poniedziałek) 08:00-13:30 - C2D, 3 grupy</del>
 5. <del>07-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy </del>
 
-6. 13-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-6. 14-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
+Dane nieustrukturyzowane i ich modelowanie z wykorzystaniem sieci neuronowych
 
-7. 20-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-7. 21-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy
+6. <del>13-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy</del>
+6. <del>14-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy </del>
 
-8. 27-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
-8. 28-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy 
+Obiektowe podejście do kodowania w Pythonie. Perceptron i Adeline jako przykład sieci neuronowych.
+
+
+7. <del>20-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy</del>
+7. <del>21-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy</del>
+
+Producent i Konsument dla procesu wyszukiwania anomalii z modelem IsolationForest.
+
+8. <del>27-05-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy</del>
+8. <del>28-05-2024 (wtorek) 09:50-17:00 - Sabinki 16, 3 grupy</del>
+
+Spark DataFrame, Streaming w oparciu o Spark DataFrame
 
 9. 03-06-2024 (poniedziałek) 08:00-13:30 - C2B, 3 grupy
 9. 04-06-2024 (wtorek) 11:40-17:00 - Sabinki 16, 3 grupy
