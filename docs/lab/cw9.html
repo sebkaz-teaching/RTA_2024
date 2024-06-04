@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analiza danych w czasie rzeczywistym - Producent Apache Kafka</title>
+<title>Analiza danych w czasie rzeczywistym - Przetwarzanie danych strumieniowych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw2.html">Producent Apache Kafka</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw9.html">Przetwarzanie danych strumieniowych</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/cw2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../lab/cw2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Producent Apache Kafka</span></a>
   </div>
 </li>
@@ -265,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/cw9.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab/cw9.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Przetwarzanie danych strumieniowych</span></a>
   </div>
 </li>
@@ -281,16 +281,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wersja-z-dostępem-do-środowiska" id="toc-wersja-z-dostępem-do-środowiska" class="nav-link active" data-scroll-target="#wersja-z-dostępem-do-środowiska">Wersja z dostępem do środowiska</a></li>
+  <li><a href="#uruchomienie-kodu-wysyłającego-strumień" id="toc-uruchomienie-kodu-wysyłającego-strumień" class="nav-link active" data-scroll-target="#uruchomienie-kodu-wysyłającego-strumień">Uruchomienie kodu wysyłającego strumień</a></li>
+  <li><a href="#apache-spark" id="toc-apache-spark" class="nav-link" data-scroll-target="#apache-spark">APACHE SPARK</a></li>
+  <li><a href="#zlicz-ilość-eventów-ze-względu-na-grupę-id" id="toc-zlicz-ilość-eventów-ze-względu-na-grupę-id" class="nav-link" data-scroll-target="#zlicz-ilość-eventów-ze-względu-na-grupę-id">zlicz ilość eventów ze względu na grupę ID</a></li>
+  <li><a href="#przetwarzanie-w-oknach-czasowych" id="toc-przetwarzanie-w-oknach-czasowych" class="nav-link" data-scroll-target="#przetwarzanie-w-oknach-czasowych">Przetwarzanie w oknach czasowych</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw2.html">Producent Apache Kafka</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab/cw1.html">Ćwiczenia</a></li><li class="breadcrumb-item"><a href="../lab/cw9.html">Przetwarzanie danych strumieniowych</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Producent Apache Kafka</h1>
+<h1 class="title">Przetwarzanie danych strumieniowych</h1>
 </div>
 
 
@@ -307,71 +310,168 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="wersja-z-dostępem-do-środowiska" class="level2">
-<h2 class="anchored" data-anchor-id="wersja-z-dostępem-do-środowiska">Wersja z dostępem do środowiska</h2>
-<p>Tą wersję można przejść również posiadając nowy obraz dockerowy i uruchomiony docker desktop na własnym komputerze.</p>
 <ol type="1">
-<li><p>Przejdź do przeglądarki i uruchom stronę ze środowiskiem (w przypadku Docker uruchom <code>localhost:8888</code>).</p></li>
-<li><p>Uruchom (w jupyter lab za pomocą ikony terminala) nowy terminal</p></li>
-<li><p>Przejdź do katalogu głównego i wypisz listę wszystkich elementów. Sprawdź czy na liście znajduje się katalog <code>kafka</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Uruchom polecenie sprawdzające listę topiców serwera Kafki <code>bash     kafka/bin/kafka-topics.sh --list --bootstrap-server broker:9092</code></p></li>
-<li><p>Dodaj topic o nazwie streaming</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-topics.sh</span> <span class="at">--bootstrap-server</span> broker:9092 <span class="at">--create</span> <span class="at">--topic</span> streaming</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Sprawdź listę tematów ponownie upewniając się, że posiadasz temat <code>streaming</code></p></li>
-<li><p>Uruchom nowy terminal i utwórz producenta w konsoli generującego dane do nowego topicu</p></li>
+<li>Sprawdź czy serwer Kafki posiada jakieś zdefiniowane topici:
+<ul>
+<li>w dodatkowym oknie termianala wpisz polecenie:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~ </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-topics.sh</span> <span class="at">--list</span> <span class="at">--bootstrap-server</span> broker:9092</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li>dodaj topic o nazwie <code>grupaXj1xx</code> Gdzie za <code>X</code> wstaw nr grupy a za <code>xx</code> nr swojego serwera</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-console-producer.sh</span> <span class="at">--bootstrap-server</span> broker:9092 <span class="at">--topic</span> streaming</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Aby sprawdzić czy wysyłanie wiadomości działa uruchom kolejne okno terminala i wpisz następującą komendę realizującą konsumenta w konsoli:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-console-consumer.sh</span> <span class="at">--bootstrap-server</span> broker:9092 <span class="at">--topic</span> streaming <span class="at">--from-beginning</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p>Pamiętaj, aby uruchamiać komendy z odpowiedniego katalogu.</p>
-</blockquote>
-<p>Ponizszy kod mozesz wykorzystać do strumieniowego przesyłania danych do Kafki. Pozwala na to pythonowy <code>Producer</code>.</p>
-<div id="cell-3" class="cell">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~ </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-topics.sh</span> <span class="at">--bootstrap-server</span> broker:9092 <span class="at">--create</span> <span class="at">--topic</span> grupaXj1xx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><p>sprawdź listę tematów ponownie upewniając się, że posiadasz temat <code>grupaXj1xx</code></p></li>
+<li><p>Uruchom nowy terminal na swoim komputerze i utwórz producenta generującego dane do nowego topicu</p></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~ </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-console-producer.sh</span> <span class="at">--bootstrap-server</span> broker:9092 <span class="at">--topic</span> grupaXj1xx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aby sprawdzić czy wysyłanie wiadomości działa uruchom kolejne okno terminala i wpisz następującą komendę realizującą konsumenta:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~ </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-console-consumer.sh</span>  <span class="at">--bootstrap-server</span> broker:9092 <span class="at">--topic</span> grupaXj1xx </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Zweryfikuj, że przesyłanie danych działa.</p>
+<p>Zamknij okno producenta. Okno konsumenta zostaw otwarte - przyda się do weryfikacji automatu generującego dane.</p>
+<section id="uruchomienie-kodu-wysyłającego-strumień" class="level2">
+<h2 class="anchored" data-anchor-id="uruchomienie-kodu-wysyłającego-strumień">Uruchomienie kodu wysyłającego strumień</h2>
+<p>Uzupełnij skrypt tak by generował następujące dane:</p>
+<ol type="1">
+<li>utwórz zmienną <code>message</code> która będzie słownikiem zawierającym informacje pojedynczego eventu (klucz: wartość):
+<ul>
+<li>“time” : aktualny czas w postaci stringu datetime.now()</li>
+<li>“id” : wybierane losowo z listy [“a”, “b”, “c”, “d”, “e”]</li>
+<li>“value: losowa wartość z zakresu 0 do 100</li>
+</ul></li>
+</ol>
+<div id="e5e8e038-4c02-4e2f-a9ef-dae6c2951a1b" class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span><span class="bu">file</span> stream.py</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kafka <span class="im">import</span> KafkaProducer</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kafka <span class="im">import</span> KafkaProducer</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>KAFKA_TOPIC <span class="op">=</span> <span class="st">'streaming'</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>SERVER <span class="op">=</span> <span class="st">"broker:9092"</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>LAG <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>KAFKA_SERVER <span class="op">=</span> <span class="st">"broker:9092"</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>TOPIC <span class="op">=</span> ...</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>LAG <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    producer <span class="op">=</span> KafkaProducer(</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        bootstrap_servers<span class="op">=</span>[SERVER],</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        value_serializer<span class="op">=</span><span class="kw">lambda</span> x: json.dumps(x).encode(<span class="st">"utf-8"</span>),</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        api_version<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">0</span>),</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>            t <span class="op">=</span> datetime.now() <span class="op">+</span> timedelta(seconds<span class="op">=</span>random.randint(<span class="op">-</span><span class="dv">15</span>, <span class="dv">0</span>))</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>            message <span class="op">=</span> {</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>                <span class="st">"time"</span> : <span class="bu">str</span>(t),</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>                <span class="st">"id"</span> : random.choice([<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>]),</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>                <span class="st">"values"</span> : random.randint(<span class="dv">0</span>,<span class="dv">100</span>)</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>            producer.send(KAFKA_TOPIC, value<span class="op">=</span>message)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>            sleep(LAG)</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">KeyboardInterrupt</span>:</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        producer.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_producer(server):</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> KafkaProducer(</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        bootstrap_servers<span class="op">=</span>[server],</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        value_serializer<span class="op">=</span><span class="kw">lambda</span> x: json.dumps(x).encode(<span class="st">"utf-8"</span>),</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        api_version<span class="op">=</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">0</span>),</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    producer <span class="op">=</span> create_producer(KAFKA_SERVER)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">### TWOJ KOD </span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>            message <span class="op">=</span> {}</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        <span class="co">###    </span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>            producer.send(TOPIC, value<span class="op">=</span>message)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            sleep(LAG)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">KeyboardInterrupt</span>:</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        producer.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Writing stream.py</code></pre>
 </div>
-<p>Uruchom kod poleceniem:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> stream.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Następnie przejdź do nowego terminala i uruchom konsumenta (w konsoli)</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kafka/bin/kafka-console-consumer.sh</span> <span class="at">--bootstrap-server</span> broker:9092 <span class="at">--topic</span> streaming <span class="at">--from-beginning</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>w terminalu jupyterlab uruchom plik <code>stream.py</code></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> stream.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>sprawdz w oknie consumenta czy wysyłane wiadomości przychodzą do Kafki.</p>
+<p>Za uruchomienie importu kafka odpowiedzialna jest biblioteka <code>kafka-python</code> którą możesz zainstalować poleceniem <code>pip install kafka-python</code></p>
+</section>
+<section id="apache-spark" class="level2">
+<h2 class="anchored" data-anchor-id="apache-spark">APACHE SPARK</h2>
+<p>Przygotuj kod skryptu który pobierze informacje z przesyłanego strumienia danych.</p>
+<div id="7bf9a50c-0463-4313-af82-17a3ed3e559b" class="cell" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span><span class="bu">file</span> app.py</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">## LOAD SPARK SESSION object</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>SERVER <span class="op">=</span> <span class="st">"broker:9092"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>TOPIC <span class="op">=</span> ...</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">## create spark variable</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">#YOUR CODE HERE</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">##  </span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    spark.sparkContext.setLogLevel(<span class="st">"WARN"</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    raw <span class="op">=</span> (</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        spark.readStream</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">format</span>(<span class="st">"kafka"</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        .option(<span class="st">"kafka.bootstrap.servers"</span>, SERVER)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        .option(<span class="st">"subscribe"</span>, TOPIC)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        .load()</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    query <span class="op">=</span>  (</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        raw.writeStream</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>        .outputMode(<span class="st">"append"</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">format</span>(<span class="st">"console"</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        .start()</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    query.awaitTermination()</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    query.stop()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Writing app.py</code></pre>
+</div>
+</div>
+<p>uruchom pierwsze przetwarzanie strumienia:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spark-submit</span> <span class="at">--packages</span> org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1 app.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Zmodyfikuj pragram <code>app.py</code> dodając schemat:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    json_schema <span class="op">=</span> StructType(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>        [</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>            StructField(<span class="st">"time"</span>, TimestampType()),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            StructField(<span class="st">"id"</span>, StringType()),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            StructField(<span class="st">"value"</span>, IntegerType()),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Możesz również wykorzystać schemat ddl.</p>
+<p>Wczytaj zawartość zmiennej value wysyłanej z Kafki: nie zapomnij wczytać biblioteki <code>pyspark.sql.functions</code></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    parsed <span class="op">=</span> raw.select(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"timestamp"</span>, f.from_json(raw.value.cast(<span class="st">"string"</span>), json_schema).alias(<span class="st">"json"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    ).select(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        f.col(<span class="st">"timestamp"</span>).alias(<span class="st">"proc_time"</span>),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        f.col(<span class="st">"json"</span>).getField(<span class="st">"time"</span>).alias(<span class="st">"event_time"</span>),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        f.col(<span class="st">"json"</span>).getField(<span class="st">"id"</span>).alias(<span class="st">"id"</span>),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        f.col(<span class="st">"json"</span>).getField(<span class="st">"value"</span>).alias(<span class="st">"value"</span>),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>lub wykorzystując funkcję dekodowania</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>parsed <span class="op">=</span> raw.select(<span class="st">"timestamp"</span>, f.from_json(f.decode(f.col(<span class="st">"value"</span>), <span class="st">"utf-8"</span>), schema).alias(<span class="st">"values"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                   ).select(<span class="st">"timestamp"</span>, <span class="st">"values.*"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>W wielu przykładach można znaleźć</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>parsed <span class="op">=</span> raw.selectExpr(<span class="st">"cast(value as string) as value"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pomimo, iż kod ten będzie wyświetlał nam wiersz naszych danych to jest on traktowany jako string i nie będzie łatwo przetwarzać taki napis.</p>
+<p>uruchom kod sprawdzając czy widzisz przychodzące eventy.</p>
+</section>
+<section id="zlicz-ilość-eventów-ze-względu-na-grupę-id" class="level2">
+<h2 class="anchored" data-anchor-id="zlicz-ilość-eventów-ze-względu-na-grupę-id">zlicz ilość eventów ze względu na grupę ID</h2>
+<p>uważaj na</p>
+<p><code>Append output mode not supported when there are streaming aggregations on streaming DataFrames/DataSets without watermark;</code></p>
+<p>Użyj “complete” albo “update”</p>
+<p>w tej prostej wersji możesz zmienić czas wykonywania obliczeń parametrem</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>writeStream.trigger(processingTime<span class="op">=</span><span class="st">'5 seconds'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="przetwarzanie-w-oknach-czasowych" class="level2">
+<h2 class="anchored" data-anchor-id="przetwarzanie-w-oknach-czasowych">Przetwarzanie w oknach czasowych</h2>
+<p>Aby wygenerować obliczanie grupowania w oknie typu tumblink window (jedno po drugim) użyj funkcji <code>window</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> parsed.groupBy(f.window(<span class="st">"timestamp"</span>, <span class="st">"5 seconds"</span>),<span class="st">"id"</span>).count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>korzystając z funkcji <code>window</code> możesz wskazać zmienną czasową oraz zrealizować okno typu sliding o długości np 10 sekund z uruchomieniem następnego okna po 5 sekundach.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> parsed.groupBy(f.window(<span class="st">"timestamp"</span>, <span class="st">"10 seconds"</span>, <span class="st">"5 seconds"</span>)).count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pamiętaj o sprawdzeniu opcji “complete” i “update”</p>
 
 
 </section>

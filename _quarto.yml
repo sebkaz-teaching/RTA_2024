@@ -24,6 +24,7 @@ website:
           - lab/cw6.ipynb
           - lab/cw7.ipynb
           - lab/cw8.ipynb
+          - lab/cw9.ipynb
   navbar:
     left: 
           - href: index.qmd
